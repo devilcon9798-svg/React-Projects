@@ -9,7 +9,7 @@ function Home() {
   const [errorMsg, setErrorMsg] = useState("");
   const [searchquery, setSeachquery] = useState("");
 
-  async function fetchRecipes(skipCount, query) {
+  async function fetchRecipes(skipCount, query) { //Parameter khud function ko call nahi karta. Jab tum function call karte ho aur koi value dete ho, to woh value parameter ke through function ke andar pahunchti hai aur phir uska use hota hai.
     setLoading(true);
     try {
       let url = `https://dummyjson.com/recipes?limit=6&skip=${skipCount}`;

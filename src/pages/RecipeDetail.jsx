@@ -12,7 +12,7 @@ function RecipeDetail() {
   async function fetchRecipe() {
     try {
       const { data } = await axios.get(`https://dummyjson.com/recipes/${id}`);
-      console.log(data);
+      // console.log(data);
       setRecipe(data);
       
     } catch (error) {
@@ -105,10 +105,10 @@ function RecipeDetail() {
             </p>
           </div>
           <p className="text-sm text-muted mb-1">
-            <strong>Meal Type:</strong> {recipe?.mealType?.join(", ")}
+            <strong>Meal Type:</strong> {recipe?.mealType?.join(", ")} //?. missing value ki wajah se hone wale access error se bachata hai.
           </p>
           <p className="text-sm text-muted">
-            <strong>Tags:</strong> {recipe?.tags?.join(", ")}
+            <strong>Tags:</strong> {recipe?.tags?.join(", ")} // join(", ") array ke elements ko ek string mein jod deta hai, comma aur space ke saath.
           </p>
         </div>
       </div>
